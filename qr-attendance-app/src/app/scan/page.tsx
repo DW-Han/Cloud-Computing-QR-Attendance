@@ -1,27 +1,29 @@
 'use client';
 
 import { useEffect } from 'react';
-import { Html5Qrcode } from 'html5-qrcode';
+import { Html5QrcodeScanner } from 'html5-qrcode';
 
 export default function ScanPage() {
   useEffect(() => {
-    const qrCodeScanner = new Html5Qrcode("reader");
-
-    qrCodeScanner.start(
-      { facingMode: "environment" },
+    const scanner = new Html5QrcodeScanner(
+      'reader',
       { fps: 10, qrbox: 250 },
+      false
+    );
+
+    scanner.render(
       (decodedText) => {
-        console.log("Scanned:", decodedText);
+        console.log("Scanned text:", decodedText);
         window.location.href = decodedText;
       },
       (errorMessage) => {
-        console.warn("Scan error:", errorMessage);
+        console.warn('QR scan error:', errorMessage);
       }
     );
 
     return () => {
-      qrCodeScanner.stop().then(() => {
-        qrCodeScanner.clear();
+      scanner.clear().catch((error) => {
+        console.error('Failed to clear QR scanner', error);
       });
     };
   }, []);
@@ -29,7 +31,7 @@ export default function ScanPage() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-4">
       <h1 className="text-xl font-bold mb-6">Scan QR Code</h1>
-      <div id="reader" className="w-full max-w-md h-[400px]" />
+      <div id="reader" className="w-full max-w-md" />
     </div>
   );
 }
