@@ -1,3 +1,5 @@
+'use client'; //component must be a client component
+//allows us to use browser APIs ie: useSearchParams()
 import Link from 'next/link';
 
 export default function Home() {

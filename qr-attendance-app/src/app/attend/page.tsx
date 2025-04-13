@@ -1,7 +1,7 @@
 'use client';
 
 import { useSearchParams } from 'next/navigation';
-import { useState } from 'react';
+import { useState, Suspense } from 'react';
 import { initializeApp } from 'firebase/app';
 import { getFirestore, doc, setDoc, serverTimestamp } from 'firebase/firestore';
 
@@ -17,7 +17,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-export default function AttendPage() {
+// This component uses the useSearchParams hook
+function AttendForm() {
   const params = useSearchParams();
   const classCode = params.get('classCode') || '';
   const [name, setName] = useState('');
@@ -65,5 +66,14 @@ export default function AttendPage() {
         </form>
       )}
     </div>
+  );
+}
+
+// main page component
+export default function AttendPage() {
+  return (
+    <Suspense fallback={<div className="flex justify-center items-center min-h-screen">Loading...</div>}>
+      <AttendForm />
+    </Suspense>
   );
 }
