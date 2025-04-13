@@ -1,0 +1,27 @@
+# dependencies
+node_modules/
+*/node_modules/
+**/node_modules/
+
+# next.js build output
+.next/
+*/.next/
+**/.next/
+
+# production build files
+out/
+*/out/
+**/out/
+
+# debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env
+.env.local
+.env*.local
+
+# OS files
+.DS_Store
+*.pem
