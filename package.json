@@ -2,7 +2,16 @@
   "dependencies": {
     "firebase": "^11.6.0",
     "html5-qrcode": "^2.3.8",
+    "next": "^15.3.0",
+    "next-auth": "^4.24.11",
     "qrcode.react": "^4.2.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
     "react-qr-code": "^2.0.15"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   }
 }
