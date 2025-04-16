@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import QRCode from 'react-qr-code';
+import Link from 'next/link';
 
 export default function GeneratePage() {
   const [classCode, setclassCode] = useState('');
@@ -27,6 +28,8 @@ export default function GeneratePage() {
         />
       )}
       {classCode && <p className="text-sm mt-2">Link: {qrUrl}</p>}
+
+      <div><Link href="/"><button>BACK</button></Link></div>
     </div>
-  );
+      );
 }
