@@ -1,14 +1,16 @@
-name: Print Repo Debug
+name: Debug GitHub Repo Info
 
 on:
   workflow_dispatch:
 
 jobs:
-  debug-repo-name:
+  print-repo-name:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
         uses: actions/checkout@v4
 
       - name: Print GitHub repository
-        run: echo "Repo is: ${{ github.repository }}"
+        run: |
+          echo "Repo is: ${{ github.repository }}"
+
