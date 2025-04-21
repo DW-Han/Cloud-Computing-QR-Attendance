@@ -16,9 +16,6 @@ jobs:
       - name: Check out repo
         uses: actions/checkout@v4
         
-      - name: Print GitHub repo info 🐙
-        run: echo "Repo: ${{ github.repository }}"
-
       - name: Authenticate to GCP
         uses: 'google-github-actions/auth@v2'
         with:
