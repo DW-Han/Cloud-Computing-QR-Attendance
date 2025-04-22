@@ -6,12 +6,12 @@ import { initializeApp } from 'firebase/app';
 import { getFirestore, doc, setDoc, serverTimestamp } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: 'YOUR_FIREBASE_API_KEY',
-  authDomain: 'YOUR_PROJECT.firebaseapp.com',
-  projectId: 'YOUR_PROJECT_ID',
-  storageBucket: 'YOUR_PROJECT.appspot.com',
-  messagingSenderId: 'SENDER_ID',
-  appId: 'APP_ID'
+  apiKey: "AIzaSyBwxnDmA_IK3626zvalPRRQgkFRVPJVX2c",
+  authDomain: "cs1660-spring2025-mdn29.firebaseapp.com",
+  projectId: "cs1660-spring2025-mdn29",
+  storageBucket: "cs1660-spring2025-mdn29.firebasestorage.app",
+  messagingSenderId: "111147801991",
+  appId: "1:111147801991:web:833999f593c0076925c722"
 };
 
 const app = initializeApp(firebaseConfig);
