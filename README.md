@@ -9,7 +9,7 @@ We created a digital and easy way to take attendance. A QR code based attendance
 https://qr-attendance-app-111147801991.us-central1.run.app
 
 ## Technical Details
-![alt text]()
+![CICD Diagram](CICD-QR.png)
 
 ## Running Locally
 The application is in qr-attendance-app folder. Follow the following to run locally: 
