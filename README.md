@@ -5,8 +5,11 @@ The teacher of a class manually taking attendance can take up a major portion of
 ## Our Solution
 We created a digital and easy way to take attendance. A QR code based attendance system where teachers can generate a daily QR code which students can scan to mark that they are present. Users have to authenticate with their emails to scan the QR code, making it more secure. This greatly speeds up the attendance process.
 
-## Service URL: 
+## LIVE Service URL: 
 https://qr-attendance-app-111147801991.us-central1.run.app
+
+## Demo Video:
+https://drive.google.com/file/d/1vwc9r4UpO2XlU7VOFjYXPJ6e80flZfrb/view?usp=sharing
 
 ## Technical Details
 This application was entiredly created with Next.js with TypeScript which is a holistic framework for handling client side rendering (CSR), server side rendering (SSR), middleware, API's etc. I personally am very fond of Next.js because of the previous reasons and it allows for the dynamic, interativity like realtime attendance lists that native React.js would provide but with server side capabilities too. 
