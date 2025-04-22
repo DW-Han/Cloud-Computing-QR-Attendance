@@ -40,7 +40,16 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 4. Firestore (for database)
 5. Artifact Registry (for images)
 
-## To update after changes:
+
+  
+## Notes
+When pushing a new revision to cloud run within github workflows it would not move all the traffice to the most recent revision:
+```bash
+gcloud run services update-traffic testservice --platform="managed" --to-latest
+```
+The command above makes it so you dont have to manually change the traffic.
+
+### To update after changes:
 gcloud builds submit --region us-central1 \
   --tag us-central1-docker.pkg.dev/cs1660-spring2025-mdn29/cloudrun/qr-attendance-app:v1
 
@@ -50,10 +59,3 @@ gcloud builds submit --region us-central1 \
   --service-account cloudrun@cs1660-spring2025-mdn29.iam.gserviceaccount.com \
   --region us-central1 \
   --port 3000
-  
-## Notes
-When pushing a new revision to cloud run within github workflows it would not move all the traffice to the most recent revision:
-```bash
-gcloud run services update-traffic testservice --platform="managed" --to-latest
-```
-The command above makes it so you dont have to manually change the traffic.
