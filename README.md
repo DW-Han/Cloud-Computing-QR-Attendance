@@ -8,6 +8,8 @@ We created a digital and easy way to take attendance. A QR code based attendance
 ## Service URL: 
 https://qr-attendance-app-111147801991.us-central1.run.app
 
+## Technical Details
+![alt text]()
 
 ## Running Locally
 The application is in qr-attendance-app folder. Follow the following to run locally: 
