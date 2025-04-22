@@ -27,3 +27,10 @@ gcloud builds submit --region us-central1 \
   --service-account cloudrun@cs1660-spring2025-mdn29.iam.gserviceaccount.com \
   --region us-central1 \
   --port 3000
+  
+## Notes
+When pushing a new revision to cloud run within github workflows it would not move all the traffice to the most recent revision:
+```bash
+gcloud run services update-traffic testservice --platform="managed" --to-latest
+```
+The command above makes it so you dont have to manually change the traffic.
