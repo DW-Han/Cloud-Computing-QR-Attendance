@@ -10,8 +10,25 @@ https://qr-attendance-app-111147801991.us-central1.run.app
 
 
 ## Running Locally
-The application is in qr-attendance-app folder. 
-Read markdown to run.
+The application is in qr-attendance-app folder. Follow the following to run locally: 
+
+Download dependecies
+```bash
+npm install
+```
+Run development server 
+```
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
 
 ## GCP Services we used 
 1. GCP API, GCP secret manager (for OAuth)
