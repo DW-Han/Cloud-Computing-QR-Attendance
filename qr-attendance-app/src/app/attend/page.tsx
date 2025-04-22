@@ -1,9 +1,10 @@
 'use client';
 
 import { useSearchParams } from 'next/navigation';
-import { useState, Suspense } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { initializeApp } from 'firebase/app';
 import { getFirestore, doc, setDoc, serverTimestamp } from 'firebase/firestore';
+import { useSession } from "next-auth/react";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBwxnDmA_IK3626zvalPRRQgkFRVPJVX2c",
@@ -17,12 +18,19 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// This component uses the useSearchParams hook
 function AttendForm() {
   const params = useSearchParams();
   const classCode = params.get('classCode') || '';
+  const { data: session } = useSession();
+
   const [name, setName] = useState('');
   const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    if (session?.user?.name) {
+      setName(session.user.name);
+    }
+  }, [session]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -40,7 +48,7 @@ function AttendForm() {
     <div className="flex flex-col items-center justify-center min-h-screen p-4 space-y-4">
       <h1 className="text-xl font-bold">Submit Your Attendance</h1>
       {submitted ? (
-        <p className="text-green-600"> Attendance submitted. Thank you!</p>
+        <p className="text-green-600">Attendance submitted. Thank you!</p>
       ) : (
         <form onSubmit={handleSubmit} className="flex flex-col space-y-4 w-full max-w-sm">
           <input
@@ -69,7 +77,6 @@ function AttendForm() {
   );
 }
 
-// main page component
 export default function AttendPage() {
   return (
     <Suspense fallback={<div className="flex justify-center items-center min-h-screen">Loading...</div>}>

@@ -8,14 +8,37 @@ We created a digital and easy way to take attendance. A QR code based attendance
 ## Service URL: 
 https://qr-attendance-app-111147801991.us-central1.run.app
 
-Application is in qr-attendance-app folder. 
-Read markdown to run.
+
+## Running Locally
+The application is in qr-attendance-app folder. Follow the following to run locally: 
+
+Enter next.js app folder
+```bash
+cd qr-attendance-app
+```
+Download dependecies
+```bash
+npm install
+```
+Run development server 
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+
 ## GCP Services we used 
-1. OAuth (Google API)
-2. CICD (AIM/workforce identity federation)
-3. Cloud Run
-4. Firestore
-5. Artifact Registry
+1. GCP API, GCP secret manager (for OAuth)
+2. AIM, Workforce Identity Federation (for CI/CD)
+3. Cloud Run (for deployment)
+4. Firestore (for database)
+5. Artifact Registry (for images)
 
 ## To update after changes:
 gcloud builds submit --region us-central1 \
@@ -27,3 +50,10 @@ gcloud builds submit --region us-central1 \
   --service-account cloudrun@cs1660-spring2025-mdn29.iam.gserviceaccount.com \
   --region us-central1 \
   --port 3000
+  
+## Notes
+When pushing a new revision to cloud run within github workflows it would not move all the traffice to the most recent revision:
+```bash
+gcloud run services update-traffic testservice --platform="managed" --to-latest
+```
+The command above makes it so you dont have to manually change the traffic.
