@@ -2,22 +2,11 @@
 
 import { useSearchParams } from 'next/navigation';
 import { useState, useEffect, Suspense } from 'react';
-import { initializeApp } from 'firebase/app';
-import { getFirestore, doc, setDoc, serverTimestamp } from 'firebase/firestore';
+import { serverTimestamp } from 'firebase/firestore';
 import { useSession } from "next-auth/react";
 import { collection, addDoc } from 'firebase/firestore';
 
-const firebaseConfig = {
-  apiKey: "AIzaSyBwxnDmA_IK3626zvalPRRQgkFRVPJVX2c",
-  authDomain: "cs1660-spring2025-mdn29.firebaseapp.com",
-  projectId: "cs1660-spring2025-mdn29",
-  storageBucket: "cs1660-spring2025-mdn29.firebasestorage.app",
-  messagingSenderId: "111147801991",
-  appId: "1:111147801991:web:833999f593c0076925c722"
-};
-
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+import { db } from '@/lib/firebase';
 
 function AttendForm() {
   const params = useSearchParams();

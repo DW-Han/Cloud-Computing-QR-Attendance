@@ -3,24 +3,18 @@
 import { useEffect, useState } from 'react';
 import QRCode from 'react-qr-code';
 import Link from 'next/link';
-import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, onSnapshot } from 'firebase/firestore';
+import {collection, onSnapshot } from 'firebase/firestore';
+import { db } from '@/lib/firebase';
 
-const firebaseConfig = {
-  apiKey: "AIzaSyBwxnDmA_IK3626zvalPRRQgkFRVPJVX2c",
-  authDomain: "cs1660-spring2025-mdn29.firebaseapp.com",
-  projectId: "cs1660-spring2025-mdn29",
-  storageBucket: "cs1660-spring2025-mdn29.appspot.com",
-  messagingSenderId: "111147801991",
-  appId: "1:111147801991:web:833999f593c0076925c722"
+
+type Attendee = {
+  name: string;
+  email: string;
 };
-
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
 
 export default function GeneratePage() {
   const [classCode, setclassCode] = useState('');
-  const [attendees, setAttendees] = useState<any[]>([]);
+  const [attendees, setAttendees] = useState<Attendee[]>([]);
 
   const baseUrl = typeof window !== 'undefined' ? window.location.origin : '';
   const qrUrl = `${baseUrl}/attend?classCode=${classCode}`;
@@ -31,7 +25,7 @@ export default function GeneratePage() {
 
     const colRef = collection(db, 'attendance', `${today}_${classCode}`, 'students');
     const unsub = onSnapshot(colRef, (snapshot) => {
-      const list = snapshot.docs.map(doc => doc.data());
+      const list = snapshot.docs.map(doc => doc.data() as Attendee);
       setAttendees(list);
     });
 
@@ -68,7 +62,11 @@ export default function GeneratePage() {
         </div>
       )}
 
-      <div><Link href="/"><button className="mt-4 border px-4 py-2 rounded">BACK</button></Link></div>
+      <div>
+        <Link href="/">
+          <button className="mt-4 border px-4 py-2 rounded">BACK</button>
+        </Link>
+      </div>
     </div>
   );
 }
