@@ -16,8 +16,6 @@ Read markdown to run.
 3. Cloud Run
 4. Firestore
 5. Artifact Registry
-6. 
-
 
 ## To update after changes:
 gcloud builds submit --region us-central1 \
