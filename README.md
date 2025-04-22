@@ -12,6 +12,10 @@ https://qr-attendance-app-111147801991.us-central1.run.app
 ## Running Locally
 The application is in qr-attendance-app folder. Follow the following to run locally: 
 
+Enter next.js app folder
+```bash
+cd qr-attendance-app
+```
 Download dependecies
 ```bash
 npm install
