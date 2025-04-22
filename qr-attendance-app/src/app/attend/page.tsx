@@ -5,6 +5,7 @@ import { useState, useEffect, Suspense } from 'react';
 import { initializeApp } from 'firebase/app';
 import { getFirestore, doc, setDoc, serverTimestamp } from 'firebase/firestore';
 import { useSession } from "next-auth/react";
+import { collection, addDoc } from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: "AIzaSyBwxnDmA_IK3626zvalPRRQgkFRVPJVX2c",
@@ -35,10 +36,11 @@ function AttendForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const date = new Date().toISOString().split('T')[0];
-    const ref = doc(db, 'attendance', `${date}_${classCode}`);
-    await setDoc(ref, {
+    const ref = collection(db, 'attendance', `${date}_${classCode}`, 'students');
+    await addDoc(ref, {
       classCode,
       name,
+      email: session?.user?.email || '',
       timestamp: serverTimestamp(),
     });
     setSubmitted(true);

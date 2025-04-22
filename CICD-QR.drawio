@@ -1,0 +1,44 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.17 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.17">
+  <diagram name="Page-1" id="nHHeNzBbnepyiHPBToQF">
+    <mxGraphModel dx="1216" dy="820" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="RQqSifJOCRQ1eRszLi4o-4" value="Git push to main" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="RQqSifJOCRQ1eRszLi4o-1" target="RQqSifJOCRQ1eRszLi4o-5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="404.0000000000002" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RQqSifJOCRQ1eRszLi4o-1" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/identity/User_Settings.svg;" vertex="1" parent="1">
+          <mxGeometry x="370" y="90" width="68" height="56.92" as="geometry" />
+        </mxCell>
+        <mxCell id="RQqSifJOCRQ1eRszLi4o-2" value="Developer" style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="370" y="60" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="RQqSifJOCRQ1eRszLi4o-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="RQqSifJOCRQ1eRszLi4o-5" target="RQqSifJOCRQ1eRszLi4o-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RQqSifJOCRQ1eRszLi4o-5" value="&lt;div&gt;GitHub Actions CI&amp;nbsp;&lt;/div&gt;&lt;div&gt;Workflow Triggered&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="344.0000000000002" y="200" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="RQqSifJOCRQ1eRszLi4o-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="RQqSifJOCRQ1eRszLi4o-6" target="RQqSifJOCRQ1eRszLi4o-10">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="404" y="470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RQqSifJOCRQ1eRszLi4o-6" value="&lt;div&gt;Step 1: Checkout Code&lt;/div&gt;&lt;div&gt;Step 2: Authenticate with GCP (via WIF)&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Step 3: Build Docker Image&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Step 4: Push to Artifact Registry&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Step 5: Deploy to Cloud Run&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="291" y="310" width="226" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="RQqSifJOCRQ1eRszLi4o-10" value="Cloud Run Hosts App" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="344" y="440" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="RQqSifJOCRQ1eRszLi4o-12" value="Users access via HTTPS" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="RQqSifJOCRQ1eRszLi4o-11" target="RQqSifJOCRQ1eRszLi4o-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RQqSifJOCRQ1eRszLi4o-11" value="" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/users.svg;" vertex="1" parent="1">
+          <mxGeometry x="372" y="580" width="66" height="100" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
