@@ -11,7 +11,7 @@ https://qr-attendance-app-111147801991.us-central1.run.app
 ## Technical Details
 This application was entiredly created with Next.js with TypeScript which is a holistic framework for handling client side rendering (CSR), server side rendering (SSR), middleware, API's etc. I personally am very fond of Next.js because of the previous reasons and it allows for the dynamic, interativity like realtime attendance lists that native React.js would provide but with server side capabilities too. 
 
-There are three main routes/pages besides the home page. `/generate`,`scan`, and `attend`. In the home page you need to authenticate before procceding, after authentication you can either generate a QR code or scan a QR code.
+There are three main routes/pages besides the home page. `/generate`,`/scan`, and `/attend`. In the home page you need to authenticate before procceding, after authentication you can either generate a QR code or scan a QR code.
 
 ### Generating QR Code
 In the `/generate` page you can enter in a "class code" to generate a unique QR code for that specific "class code", scanning the code will bring you to that said code's sign in page. Any students that then "attend" will be shown in a dynamic attendance list in the `/generate` page.
