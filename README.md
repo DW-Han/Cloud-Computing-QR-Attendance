@@ -8,8 +8,11 @@ We created a digital and easy way to take attendance. A QR code based attendance
 ## Service URL: 
 https://qr-attendance-app-111147801991.us-central1.run.app
 
-Application is in qr-attendance-app folder. 
+
+## Running Locally
+The application is in qr-attendance-app folder. 
 Read markdown to run.
+
 ## GCP Services we used 
 1. GCP API, GCP secret manager (for OAuth)
 2. AIM, Workforce Identity Federation (for CI/CD)
