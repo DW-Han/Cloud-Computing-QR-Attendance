@@ -3,12 +3,22 @@
 The teacher of a class manually taking attendance can take up a major portion of class time. They have to go down a list one by one and call and listen for a response, this is both tedious and time consuming. The problems becomes more apparent if there is subsitute teacher, here they may not know where to find the class list, they may mispronounce names, etc., taking up even more class time.
 
 ## Our Solution
-We created a digital and easy way to take attendance. A QR code based attendance system where teachers can generate a daily QR code which students can scan to mark that they are present.
+We created a digital and easy way to take attendance. A QR code based attendance system where teachers can generate a daily QR code which students can scan to mark that they are present. Users have to authenticate with their emails to scan the QR code, making it more secure. This greatly speeds up the attendance process.
 
 ## Service URL: 
 https://qr-attendance-app-111147801991.us-central1.run.app
 
 ## Technical Details
+This application was entiredly created with Next.js with TypeScript which is a holistic framework for handling client side rendering (CSR), server side rendering (SSR), middleware, API's etc. I personally am very fond of Next.js because of the previous reasons and it allows for the dynamic, interativity like realtime attendance lists that native React.js would provide but with server side capabilities too. 
+
+There are three main routes/pages besides the home page. `/generate`,`scan`, and `attend`. In the home page you need to authenticate before procceding, after authentication you can either generate a QR code or scan a QR code.
+
+### Generating QR Code
+In the `/generate` page you can enter in a "class code" to generate a unique QR code for that specific "class code", scanning the code will bring you to that said code's sign in page. Any students that then "attend" will be shown in a dynamic attendance list in the `/generate` page.
+
+### Scanning QR Code
+In the `scan` page you can access your devices camera to scan a QR code. Scanning one of this app's QR codes brings you to the `attend` page, and after clicking submit this stores the users email, name, the current date, and the class code to firestore.
+
 ### CICD and Deployment Diagram
 ![CICD Diagram](CICD-QR.png)
 
