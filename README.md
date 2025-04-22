@@ -17,7 +17,7 @@ There are three main routes/pages besides the home page. `/generate`,`scan`, and
 In the `/generate` page you can enter in a "class code" to generate a unique QR code for that specific "class code", scanning the code will bring you to that said code's sign in page. Any students that then "attend" will be shown in a dynamic attendance list in the `/generate` page.
 
 ### Scanning QR Code
-In the `scan` page you can access your devices camera to scan a QR code. Scanning one of this app's QR codes brings you to the `attend` page, and after clicking submit this stores the users email, name, the current date, and the class code to firestore.
+In the `/scan` page you can access your devices camera to scan a QR code. Scanning one of this app's QR codes brings you to a macthing `/attend` page, and after clicking submit this stores the users email, name, the current date, and the class code to firestore.
 
 ### CICD and Deployment Diagram
 ![CICD Diagram](CICD-QR.png)
