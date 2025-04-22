@@ -8,6 +8,12 @@ We created a digital and easy way to take attendance. A QR code based attendance
 ## Service URL: 
 https://qr-attendance-app-111147801991.us-central1.run.app
 
+## Technical Details
+### CICD and Deployment Diagram
+![CICD Diagram](CICD-QR.png)
+
+### Architecture Diagram
+![Architecture Diagram](ArchDia.png)
 
 ## Running Locally
 The application is in qr-attendance-app folder. Follow the following to run locally: 
