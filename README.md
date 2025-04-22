@@ -11,11 +11,11 @@ https://qr-attendance-app-111147801991.us-central1.run.app
 Application is in qr-attendance-app folder. 
 Read markdown to run.
 ## GCP Services we used 
-1. OAuth (Google API)
-2. CICD (AIM/workforce identity federation)
-3. Cloud Run
-4. Firestore
-5. Artifact Registry
+1. GCP API, GCP secret manager (for OAuth)
+2. AIM, Workforce Identity Federation (for CI/CD)
+3. Cloud Run (for deployment)
+4. Firestore (for database)
+5. Artifact Registry (for images)
 
 ## To update after changes:
 gcloud builds submit --region us-central1 \
